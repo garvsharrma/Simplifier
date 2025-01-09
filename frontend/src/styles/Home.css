@@ -1,0 +1,80 @@
+/* Home.css */
+
+body{
+    margin: 0%;
+}
+
+.homepage-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Left Section */
+.homepage-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222831;
+  padding: 20px;
+  padding-left: 6%;
+  text-align: center;
+  color: #eeeeee;
+
+}
+
+.homepage-left h2 {
+    font-size: 2.1rem;
+    margin-bottom:0px;
+  }
+
+.homepage-left h1 {
+    color: #76aeab;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  margin-top: 4%;
+}
+
+.homepage-left p {
+  font-size: 1.2rem;
+}
+
+/* Right Section */
+.homepage-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222831;
+  padding: 20px;
+  padding-right: 6%;
+}
+
+.homepage-right h5 {
+    color: #76aeab;
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin-bottom: 15px;
+  margin-top: 4%;
+}
+
+.homepage-right button {
+  width: 220px;
+  padding: 10px 20px;
+  margin: 12px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222831;
+  background-color: #eeeeee;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.homepage-right button:hover {
+  background-color: #76aeab;
+}

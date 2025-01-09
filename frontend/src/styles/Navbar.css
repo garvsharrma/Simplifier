@@ -1,0 +1,101 @@
+  /* src/components/Navbar.css */
+
+  .navbar {
+    background-color: black; /* Make navbar transparent */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;  
+    z-index: 1000; /* Ensure navbar stays on top */
+    padding-top: 2rem;
+    color: white;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    padding-left: 20px;
+    font-size: 2rem;
+    font-weight: bolder;
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 1.1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-links a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+
+  .navbar-links a:hover {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+
+  .icon{
+    height: 30px;
+  }
+
+  .widgets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .widgets a{
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+
+  .widgets a:hover{
+    font-weight: 600;
+    opacity: 0.8;
+    color: #333;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-links {
+      display: none; /* Hide links by default */
+      flex-direction: column; /* Stack links vertically */
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.show {
+      display: flex; /* Show links when .show class is added */
+    }
+
+    .navbar-links a {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #555;
+    }
+
+    .navbar-toggle {
+      display: block;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+  }
