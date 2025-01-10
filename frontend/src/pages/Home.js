@@ -16,7 +16,7 @@ const Home = () => {
       <h5>What's in your mind today?</h5>
         <button onClick={() => window.location.href = '/chatbot'}>Ask Bot 🤖</button>
         <button onClick={() => window.location.href = '/ImageProcessor'}>Prompt Image 🗎</button>
-        <button onClick={() => window.location.href = '/references'}>Detect AI</button>
+        <button onClick={() => window.location.href = '/detectAI'}>AI-Assisted Text Editor</button>
         <button onClick={() => window.location.href = '/features'}>Explore Features</button>
 
       </div>

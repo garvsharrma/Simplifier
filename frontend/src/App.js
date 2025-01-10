@@ -6,6 +6,7 @@ import Notes from './pages/Notes';
 import OCR from './pages/OCR';
 import Chatbot from './pages/Chatbot';
 import ImageProcessor from './pages/ImageProcessor';
+import DetectAI from './pages/DetectAI';
 
 const App = () => {
   return (
@@ -16,6 +17,8 @@ const App = () => {
         <Route path="/notes" element={<Notes />} />
         <Route path="/ocr" element={<OCR />} />
         <Route path="/ImageProcessor" element={<ImageProcessor />} />
+        <Route path="/DetectAI" element={<DetectAI />} />
+
         <Route path="/chatbot" element={<Chatbot />} />
       </Routes>
     </Router>
