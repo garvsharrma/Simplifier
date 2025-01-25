@@ -163,6 +163,51 @@ app.post('/sapling/*', (req, res, next) => {
 })
 
 
+// AI Detector
+
+app.post('/aidetect', async (req, res) => {
+  const { text } = req.body;
+
+  if (!text) {
+    return res.status(400).json({ msg: 'Text is required for AI detection.' });
+  }
+
+  try {
+    const response = await axios.post('https://api.sapling.ai/api/v1/aidetect', {
+      key: process.env.SAPLING_API_KEY,
+      text,
+      sent_scores: true,
+    });
+
+    res.json(response.data);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: 'Failed to detect AI content.' });
+  }
+});
+
+
+async function run(text) {
+  try {
+      const response = await axios.post(
+          'https://api.sapling.ai/api/v1/aidetect',
+          {
+              key: 'WB7C1J369CYBEM5WN1D087RECXJ3CITP',
+              text,
+          },
+      );
+      const {status, data} = response;
+      console.log({status});
+      console.log(JSON.stringify(data, null, 4));
+  } catch (err) {
+      const { msg } = err.response.data;
+      console.log({err: msg});
+  }
+}
+
+//run('This is sample text enerated'); // replace with the text you want to analyze
+
+
 
 app.use('/api/notes', notesRouter); // Routes for notes
 app.use('/api/ImageProcessor', imageProcessorRouter);   // Routes for OCR
