@@ -136,10 +136,10 @@ app.post('/api/process-prompt', async (req, res) => {
 //AI TEXT ENHANCEMENT
 
 
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
+// app.use(express.static(path.join(__dirname, 'client/build')));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/client/build/index.html'));
+// });
 
 const SAPLING_API_URL = 'https://api.sapling.ai';
 
