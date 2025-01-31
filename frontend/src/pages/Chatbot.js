@@ -23,7 +23,8 @@ const Chatbot = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/chat', {
+      
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input }),
@@ -55,7 +56,7 @@ const Chatbot = () => {
 
   return (
     <div className="chatbot-container">
-      <h1 className="chatbot-heading">AI Chatbot 🤖</h1> {/* Chatbot heading */}
+      <h1 className="chatbot-heading">AI Chatbot 🤖</h1>
       <div className="chat-window">
         {messages.map((msg, index) => (
           <div

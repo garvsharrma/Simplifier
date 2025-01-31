@@ -18,7 +18,6 @@ const Home = () => {
         <button onClick={() => window.location.href = '/ImageProcessor'}>Prompt Image 🗎</button>
         <button onClick={() => window.location.href = '/detectAI'}>AI-Assisted Text Editor</button>
         <button onClick={() => window.location.href = '/AIdetect'}>Detect AI</button>
-        <button onClick={() => window.location.href = '/features'}>Explore Features</button>
 
       </div>
     </div>

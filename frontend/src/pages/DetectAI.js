@@ -5,7 +5,7 @@ import { Sapling } from '@saplingai/sapling-js/observer';
 function DetectAI() {
   useEffect(() => {
     Sapling.init({
-      endpointHostname: 'http://127.0.0.1:5000',
+      endpointHostname: process.env.REACT_APP_BASE_URL,
       saplingPathPrefix: '/sapling',
     });
 

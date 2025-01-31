@@ -24,7 +24,7 @@ const ImageProcessor = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:5000/api/process-image', {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/process-image`, {
         method: 'POST',
         body: formData,
       });

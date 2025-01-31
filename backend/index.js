@@ -176,7 +176,7 @@ app.post('/aidetect', async (req, res) => {
     const response = await axios.post('https://api.sapling.ai/api/v1/aidetect', {
       key: process.env.SAPLING_API_KEY,
       text,
-      sent_scores: true,
+      sent_scores: true, 
     });
 
     res.json(response.data);
@@ -185,29 +185,6 @@ app.post('/aidetect', async (req, res) => {
     res.status(500).json({ msg: 'Failed to detect AI content.' });
   }
 });
-
-
-async function run(text) {
-  try {
-      const response = await axios.post(
-          'https://api.sapling.ai/api/v1/aidetect',
-          {
-              key: 'WB7C1J369CYBEM5WN1D087RECXJ3CITP',
-              text,
-          },
-      );
-      const {status, data} = response;
-      console.log({status});
-      console.log(JSON.stringify(data, null, 4));
-  } catch (err) {
-      const { msg } = err.response.data;
-      console.log({err: msg});
-  }
-}
-
-//run('This is sample text enerated'); // replace with the text you want to analyze
-
-
 
 app.use('/api/notes', notesRouter); // Routes for notes
 app.use('/api/ImageProcessor', imageProcessorRouter);   // Routes for OCR
@@ -218,13 +195,6 @@ app.use('/api/references', referencesRouter);   // Routes for references
 app.get('/', (req, res) => {
   res.send('Backend is running!');
 });
-
-const mongoose = require('mongoose');
-const { error } = require('console');
-const { rejects } = require('assert');
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
 
 
 app.get('/', (req, res) => res.send('Server is running!'));
