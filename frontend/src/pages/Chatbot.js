@@ -30,6 +30,7 @@ const Chatbot = () => {
         body: JSON.stringify({ message: input }),
       });
 
+      console.log('Base URL:', process.env.REACT_APP_BASE_URL);
       const data = await response.json();
       console.log('Bot reply:', data.reply);
 
